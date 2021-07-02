@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// Schema del usuario
 const UserSchema = Schema({
 
     name: {
