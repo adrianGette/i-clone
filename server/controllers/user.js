@@ -29,6 +29,16 @@ async function register(input) {
         }
 }
 
+async function login(input) {
+
+    const { email, password } = input;
+
+    console.log("Email: " + email);
+    console.log("Password: " + password);
+
+}
+
 module.exports = {
     register,
+    login,
 };
