@@ -1,0 +1,17 @@
+{
+  "name": "ig-clone",
+  "version": "0.0.1",
+  "description": "Servidor de ig-clone app",
+  "main": "index.js",
+  "author": "Adrián Gette",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node ./index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.25.2",
+    "dotenv": "^10.0.0",
+    "graphql": "^15.5.1",
+    "mongoose": "^5.13.0"
+  }
+}
