@@ -1,21 +1,35 @@
 import React from 'react';
 import { Form, Button } from "semantic-ui-react";
+import { useFormik } from 'formik';
 import "./LoginForm.scss";
 
 export default function LoginForm() {
+
+    const formik = useFormik({
+        initialValues: initialValues(),
+        validationSchema: null,
+        onSubmit: (formData) => {
+            console.log(formData);
+        },
+    });
+
     return (
-        <Form className="login-form">
+        <Form className="login-form" onSubmit={formik.handleSubmit}>
             <h2>Entra para ver fotos y videos de tus amigos.</h2>
             <Form.Input 
                 type="text"
                 placeholder="Correo electrónico"
                 name="email"
+                value={formik.values.email}
+                onChange={formik.handleChange}
             />
 
             <Form.Input 
                 type="password"
                 placeholder="Contraseña"
                 name="password"
+                value={formik.values.password}
+                onChange={formik.handleChange}
             />
 
             <Button type="submit" className="btn-submit">
@@ -23,4 +37,12 @@ export default function LoginForm() {
             </Button>
         </Form>
     )
+}
+
+
+function initialValues() {
+    return {
+        email: "",
+        password: "",
+    };
 }
