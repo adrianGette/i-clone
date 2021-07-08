@@ -5,6 +5,7 @@ import client from './config/apollo';
 import Auth from './pages/Auth';
 import { getToken } from './utils/token';
 import AuthContext from './context/AuthContext';
+import Home from "./pages/Home";
 
 
 
@@ -41,7 +42,7 @@ export default function App() {
   return (
     <ApolloProvider client={client}>
       <AuthContext.Provider value={authData}>
-        {!auth ? <Auth /> : <h1>Logueado</h1>}
+        {!auth ? <Auth /> : <Home />}
         <ToastContainer
           position="top-right"
           autoClose={5000}
