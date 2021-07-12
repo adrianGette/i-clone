@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Grid, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/img/i-clone.png";
+import RightHeader from "./RightHeader";
 import "./Header.scss";
 
 export default function Header() {
@@ -12,14 +13,13 @@ export default function Header() {
                     <Grid.Column width={3} className="header__logo">
                         <Link to="/">
                             <Image src={Logo} alt="Ig-clone" />
-                        </Link>
-                        
+                        </Link>                        
                     </Grid.Column>
-                    <Grid.Column width={10} className="header__logo">
+                    <Grid.Column width={10}>
                         <p>Buscador</p>
                     </Grid.Column>
-                    <Grid.Column width={3} className="header__logo">
-                        <p>Opciones</p>
+                    <Grid.Column width={3}>
+                        <RightHeader />
                     </Grid.Column>
                 </Grid>
             </Container>
